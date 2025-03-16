@@ -1,0 +1,23 @@
+Listas Ordenadas em Python é uma estrutura de dados que permite armazenar e organizar elementos de forma sequencial. 
+Cada elemento é atribuído a uma posição especifica na lista, que é representada por um índice. Essa ordem é mantida quando adicionamos, 
+removemos ou modificamos elementos na lista.
+Em Python, podemos criar uma lista ordenada utilizando colchetes [] e separando os elementos por vírgulas. 
+Por exemplo, a seguinte linha de código cria uma lista ordenada com números de 1 a 5:
+
+lista_ordenada = [1, 2, 3, 4, 5]
+
+Podemos acessar elementos específicos da lista utilizando seus índices. Por exemplo, para acessar o terceiro elemento da lista acima, 
+utilizamos o seguinte código: elemento = lista_ordenada[2]
+
+Uma das vantagens de utilizar listas ordenadas em Python é a possibilidade de realizar operações como adicionar,
+remover e pesquisar elementos de forma eficiente. Além disso, podemos utilizar funções e métodos específicos para manipular listas, 
+como o método "append" para adicionar elementos ao final da lista ou método "sort" para ordenar os elementos em ordem crescente.
+
+Em resumo, uma lista ordenada em Python é uma estrutura de dados que nos permite armazenar e organizar elementos de forma sequencial.
+Elas são flexíveis, permitindo a manipulação eficiente dos elementos. Ao aprender Python de forma organizada, você estará apto a utilizar listas ordenadas
+e aproveitar todos os benefícios que elas oferecem em seus projetos.
+
+
+https://awari.com.br/lista-ordenada-aprenda-python-de-forma-organizada/
+
+
