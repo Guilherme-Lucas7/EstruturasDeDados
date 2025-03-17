@@ -11,9 +11,37 @@ A implementação de uma lista encadeada em Python envolve a criação de uma cl
 Vamos ver um exemplo de implementação básica:
 
 
-<img src="https://github.com/Guilherme-Lucas7/EstruturasDeDados/raw/main/Listas%20Encadeadas.png?raw=true" alt="Descrição da Imagem">
 ________________________________________________
 
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+class LinkedList:
+    def __init__(self):
+        self.head = None
+
+    def insert(self, data):
+        new_node = Node(data)
+        new_node.next = self.head
+        self.head = new_node
+
+    def display(self):
+        current = self.head
+        while current:
+            print(current.data, end=" -> ")
+            current = current.next
+        print("None")
+
+# Exemplo de uso
+lista = LinkedList()
+lista.insert(10)
+lista.insert(20)
+lista.insert(30)
+lista.display()  # Saída: 30 -> 20 -> 10 -> None
+
+-------------------------------------------------------------------
 
 https://awari.com.br/lista-encadeada-em-python-aprenda-a-estrutura-de-dados-essencial-para-programacao/
 
