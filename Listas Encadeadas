@@ -12,6 +12,25 @@ Vamos ver um exemplo de implementação básica:
 
 
 ________________________________________________
+ Lista Encadeada Simples
+ Definição:
+Uma lista encadeada simples é uma estrutura onde cada nó aponta apenas para o próximo nó da sequência. O último nó aponta para None, indicando o fim da lista.
+
+🔹 Características:
+✔ Cada nó tem um valor e um ponteiro para o próximo nó.
+✔ O primeiro nó é chamado de cabeça (head).
+✔ O último nó aponta para None.
+✔ Percorre-se a lista sempre do primeiro nó até o último.
+
+🔹 Exemplo de Estrutura:
+
+[1] -> [2] -> [3] -> None
+
+🔹 Uso Comum:
+✅ Implementação de pilhas e filas.
+✅ Manipulação de listas dinâmicas sem precisar realocar memória.
+
+Lista Encadeada Simples:
 
 class Node:
     def __init__(self, data):
@@ -42,9 +61,133 @@ lista.insert(30)
 lista.display()  # Saída: 30 -> 20 -> 10 -> None
 
 -------------------------------------------------------------------
+Lista Duplamente Encadeada
+
+Definição:
+Uma lista duplamente encadeada é uma versão aprimorada da lista simples, 
+onde cada nó contém dois ponteiros:
+🔸 Um aponta para o próximo nó (next).
+🔸 Outro aponta para o nó anterior (prev).
+
+🔹 Características:
+✔ Permite percorrer a lista em ambas as direções (para frente e para trás).
+✔ O primeiro nó tem prev = None, e o último nó tem next = None.
+✔ Maior uso de memória devido ao ponteiro extra.
+
+🔹 Exemplo de Estrutura:
+
+None <- [1] <-> [2] <-> [3] -> None
+🔹 Uso Comum:
+✅ Navegação bidirecional (ex: histórico do navegador).
+✅ Estruturas como deque (fila dupla).
+
+
+Lista Duplamente Encadeada:
+
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None  # Próximo nó
+        self.prev = None  # Nó anterior
+
+class DoublyLinkedList:
+    def __init__(self):
+        self.head = None
+
+    def append(self, data):
+        new_node = Node(data)
+        if not self.head:
+            self.head = new_node
+            return
+        current = self.head
+        while current.next:
+            current = current.next
+        current.next = new_node
+        new_node.prev = current
+
+    def display_forward(self):
+        current = self.head
+        while current:
+            print(current.data, end=" <-> ")
+            current = current.next
+        print("None")
+
+# Exemplo de uso
+lista = DoublyLinkedList()
+lista.append(10)
+lista.append(20)
+lista.append(30)
+lista.display_forward()
+
+______________________________________________________________
+Lista Circular
+ Definição:
+Uma lista circular é uma variação onde o último nó se conecta ao primeiro, formando um ciclo.
+
+🔹 Características:
+✔ Pode ser simplesmente ou duplamente encadeada.
+✔ Não há None no final, pois a lista sempre se reconecta ao início.
+✔ Pode percorrer a lista indefinidamente sem encontrar um final.
+
+🔹 Exemplo de Estrutura (Simplesmente Encadeada):
+
+
+[1] -> [2] -> [3] ┐
+       ^----------|
+🔹 Uso Comum:
+✅ Algoritmos de agendamento (Round Robin).
+✅ Implementação de buffers circulares.
+
+Lista Circular: 
+
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+class CircularLinkedList:
+    def __init__(self):
+        self.head = None
+
+    def append(self, data):
+        new_node = Node(data)
+        if not self.head:
+            self.head = new_node
+            new_node.next = self.head  # Aponta para ele mesmo
+            return
+        current = self.head
+        while current.next != self.head:
+            current = current.next
+        current.next = new_node
+        new_node.next = self.head
+
+    def display(self, count=10):  # Para evitar loop infinito
+        current = self.head
+        for _ in range(count):
+            if current:
+                print(current.data, end=" -> ")
+                current = current.next
+        print("...")
+
+# Exemplo de uso
+lista = CircularLinkedList()
+lista.append(5)
+lista.append(10)
+lista.append(15)
+lista.display()
+
+
+
+
+
+
 
 https://awari.com.br/lista-encadeada-em-python-aprenda-a-estrutura-de-dados-essencial-para-programacao/
 
 
 https://medium.com/@emersoneduardo.airesnunes/listas-encadeadas-utilizando-python-7526f982b4ae
+
+https://pt.slideshare.net/slideshow/lista-duplamente-encadeada-em-python-181582142/181582142
+
+https://wagnergaspar.com/como-implementar-uma-lista-circular-lista-encadeada-circular/
 
