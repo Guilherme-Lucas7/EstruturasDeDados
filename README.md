@@ -56,7 +56,7 @@ class ListaEncadeada:
             atual = atual.proximo
         print("None")
 
-# Teste
+
 lista = ListaEncadeada()
 lista.inserir_no_fim(1)
 lista.inserir_no_fim(2)
@@ -107,7 +107,7 @@ class ListaOrdenada:
             atual = atual.proximo
         print("None")
 
-# Teste
+
 lista = ListaOrdenada()
 lista.inserir_ordenado(10)
 lista.inserir_ordenado(5)
@@ -165,7 +165,7 @@ class ArvoreBinaria:
             print(no.chave, end=" ")
             self.exibir_em_ordem(no.direita)
 
-# Teste
+
 arvore = ArvoreBinaria()
 arvore.inserir(50)
 arvore.inserir(30)
